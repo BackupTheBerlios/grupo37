@@ -1,0 +1,33 @@
+Fecha de modificacion: 05/02/2005 12:05 Alex.
+
+Este fichero sirve para notificar que una tarea ya se ha hecho y que esta 
+pendiente de ser revisada para darla como completada. Cuando alguien termine algo
+lo pone aquí y el resto lo revisa. Si no encuentra errores pone su nombre y si 
+encuentra alguno lo pone en Bugs.txt
+
+-	Seleccionar elemento
+
+-	ControladorMouseListener y MouseDragged
+
+-	Probar la tabla de la derecha, parece que hace todo lo que tiene que hacer
+	(Pensad si hay que meter o podemos meter mas campos)
+
+- 	Probar que se borran bien los enlaces y las conexiones del nodo que forma parte de 
+	el que se elimina.
+
+-	Si se borra un elemento tambien habria que borrar sus enlaces
+
+-	Cambiar tabla Derecha para admitir Enlaces.
+			Cambiar fachada y modelo..
+			Nodo nodo=(Nodo) fachada.getElementoSeleccionadoDiseño();
+			AHORA -> Elemento elemento=fachada.getElementoSeleccionadoDiseño();
+		
+-	En las cosas sincronizadas en vez de la "t" hay que poner un numero, que
+			será el tiempo que existe esa conexion o algo asi (para el prototipado) 
+
+----------------------------------------------------------------------------------------
+-	Null pointer exception cuando creamos otra conexion entre elementos que ya la tienen
+	o algo asi.
+
+-	Al mover una figura no controlamos el que este dentro de los limites de la pizarra
+

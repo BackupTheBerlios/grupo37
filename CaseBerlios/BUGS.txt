@@ -1,0 +1,11 @@
+Fecha de modificacion: 05/02/2005 12:05 Alex.
+
+Este fichero sirve para anotar aquello que falla y que anotamos porque no sabemos, 
+podemos o queremos arreglarlo. 
+
+-	También me he dado cuenta de que se puede poner un elemento solpando a otro. ¿?
+ 
+-	A lo mejor los controladores no tienen que recibir la fachada ICase sino
+	una fachada mas pequeña como IDiseño ¿? 
+
+- 	Cómo dibujar los enlacesDinamico con línea discontinua.

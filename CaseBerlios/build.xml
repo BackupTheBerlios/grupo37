@@ -1,0 +1,87 @@
+<!-- Generacion automatica de Si.jar y Si_src.zip 
+
+ Alejandro Blanco, David Curieses Chamon, Oscar Ortega
+ 
+ Proyecto Sistemas Informaticos: 
+ 
+ Herramienta CASE para diseño y prototipado de aplicaciones hipermedia
+
+-->
+
+<project name="Case" basedir="." default="todo">
+
+	<!-- DIRECTORIOS -->
+	<property name="src.dir" value="src"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="classes.dir" value="classes"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="doc.dir" value="doc"/>
+	<property name="manifest.dir" value="manifest"/>
+	<property name="imagenes.dir" value="Imagenes"/>
+
+	<!-- caracteristicas del proyecto -->
+	<property name="my.name" value="case"/>
+	<property name="paquetes" value="ucm.fdi.si.*"/>
+	
+	<!-- ELIMINA DIRECTORIOS-->
+  	<target name="limpiar">
+		<delete dir="${classes.dir}"/>
+	    <delete dir="${doc.dir}"/>
+    	<delete dir="${dist.dir}"/>
+	</target>
+
+	<!-- COMPILAR -->
+  	<target name="compilar" depends="limpiar">
+    	<mkdir dir="${classes.dir}"/>
+    	<javac srcdir="${src.dir}" destdir="${classes.dir}" classpath="${lib.dir}/jdom.jar" verbose="false" debug="true" />
+	</target>
+	
+	<!-- COPIAR RECURSOS -->
+	<target name="copiar.recursos" depends="compilar" >
+		<!-- Ficheros dentro de los paquetes de codigo fuente -->
+		<copy todir="${classes.dir}">
+		    <fileset dir="${src.dir}">
+		    	<exclude name="**/*.java"/>
+		    </fileset>
+	    </copy>
+		<!-- Librerias -->
+	 	<copy todir="${classes.dir}/lib">
+			    <fileset dir="${lib.dir}">
+		    	</fileset>
+	 	</copy> 		 	
+		<!-- Imagenes 
+	 	<copy todir="${classes.dir}/${imagenes.dir}">
+			    <fileset dir="${imagenes.dir}">
+		    	</fileset>
+	 	</copy> 		
+	 	--> 	
+	</target>
+
+	<!-- GENERA FICHERO BINARIOS Y FICHERO FUENTES -->
+  	<target name="distribuir" depends="compilar">
+    	<mkdir dir="${dist.dir}"/>
+    	<jar manifest="${manifest.dir}/${my.name}.mf"
+  			jarfile="${dist.dir}/${my.name}.jar" 
+    		basedir="${classes.dir}"
+          	compress="true">
+  		</jar>
+    	<zip zipfile="${dist.dir}/${my.name}_src.jar"
+    		basedir="${src.dir}"
+			compress="true">
+  		</zip>
+  	</target>
+
+	<!-- PRUEBA UNA CLASE 
+  <target name="probar" depends="compilar">
+    <java classname="ucm.fdi.si.util.Punto">
+      <classpath>
+        <pathelement path="${classes.dir}"/>
+        <pathelement path="${lib.dir}/jdom.jar"/>
+      </classpath>
+    </java>
+  </target>
+	-->
+
+  <target name="todo" depends="compilar, copiar.recursos, distribuir"/>
+
+</project>	

@@ -1,0 +1,27 @@
+Fecha de modificacion: 17/02/2005 15:15 Óscar
+
+Este fichero sirve para poner las cosas que se tienen que hacer.
+---------------------------------------------------------------------------
+David:	
+---------------------------------------------------------------------------
+Óscar:	Establecer las restricciones de los enlaces tanto estaticos como dinamicos
+---------------------------------------------------------------------------		
+Alex:	Las flechas en contenido quedan raras (lo queremos para ayer)
+		Quedan raras en general
+---------------------------------------------------------------------------	
+
+- Ya se puede dibujar anclas estaticas y dinámicas dentro de un contenido estatico y dinamica
+  solo en la representacion de rectangulo de ambas.
+- También he depurado lo de pintar enlacesEstaticos y
+  podemos pintar enlacesDinamico(pensar como hacer que sea discontinua), 
+  pero hay que concretar la funcion comprobarRestriccionesContenido para cada tipo
+  de enlace.
+
+Cosas por hacer (tras revision de navarrete):
+
+	-	Poder mover los enlaces, conexiones, ... Linked
+
+	-	Figuras "opacas"
+	
+	-	Notación alternativa en botón, no cambiarla "dinámicamente" en la pizarra
+	
