@@ -12,5 +12,5 @@
 public class SinTitulo2 {
   public SinTitulo2() {
   }
-fhfghfghfghf
+
 }
